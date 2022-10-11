@@ -1,0 +1,14 @@
+spin_version = "1"
+authors = ["Ant Weiss <anton@otomato.io>"]
+description = "Check if json is kind"
+name = "kindness-checker"
+trigger = { type = "http", base = "/check" }
+version = "0.1.0"
+
+[[component]]
+id = "kindness-checker"
+source = "target/wasm32-wasi/release/kindness_checker.wasm"
+[component.trigger]
+route = "/..."
+[component.build]
+command = "cargo build --target wasm32-wasi --release"
